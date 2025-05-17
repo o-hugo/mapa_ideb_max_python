@@ -1,0 +1,45 @@
+# Nome do ambiente Conda
+name: painel-ideb-py
+
+# Canais de onde o Conda buscará os pacotes
+channels:
+  - conda-forge
+  - defaults
+
+# Lista de dependências
+dependencies:
+  # Versão do Python
+  - python=3.9 # Ou 3.10, 3.11 conforme sua preferência
+
+  # Bibliotecas para Jupyter Notebooks/Lab
+  - notebook>=6.4.0
+  - ipykernel>=6.0.0
+
+  # Bibliotecas principais para o painel e manipulação de dados
+  - streamlit>=1.0.0
+  - pandas>=1.3.0
+  - geopandas>=0.10.0 # Essencial para manipulação de dados geoespaciais em Python
+  - fiona # Dependência do GeoPandas
+  - shapely # Dependência do GeoPandas
+  - pyproj # Dependência do GeoPandas
+  - rtree # Dependência espacial
+
+  # Bibliotecas para mapas e visualização
+  - folium>=0.12.0
+  - streamlit-folium>=0.6.0
+  - numpy>=1.20.0
+  - matplotlib>=3.4.0 # Usado para gerar colormaps
+  - branca>=0.4.0 # Dependência do Folium
+
+  # Dependências para usar o geobr (R) via Python
+  - r-base>=4.0 # Instalação do R
+  - r-essentials # Pacotes R comuns
+  - r-geobr # O pacote geobr original do R
+  - r-sf # Dependência do r-geobr para manipulação de dados espaciais em R
+  - r-dplyr # Utilitário comum em R, pode ser útil para o geobr
+  - rpy2>=3.4.0 # Biblioteca para chamar R a partir do Python
+  
+  # Incluir pip para instalar o wrapper Python geobr
+  #- pip
+  #- pip:
+  #  - geobr>=0.1.0 # O wrapper Python para o pacote geobr do R
