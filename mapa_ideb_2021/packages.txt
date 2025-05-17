@@ -1,0 +1,12 @@
+# Dependências do sistema operacional para R e pacotes R geoespaciais
+r-base-core     # Instala o núcleo do R
+r-cran-sf       # Tenta instalar o pacote R 'sf' via apt (pode não ser a versão mais recente ou pode faltar)
+r-cran-dplyr    # Tenta instalar o pacote R 'dplyr' via apt
+# r-cran-geobr  # É improvável que 'r-cran-geobr' esteja disponível diretamente via apt.
+                # A instalação do pacote R 'geobr' pode precisar ser tratada de outra forma se esta falhar.
+
+# Bibliotecas de sistema frequentemente necessárias para pacotes R geoespaciais como 'sf'
+libgdal-dev
+libgeos-dev
+libproj-dev
+libudunits2-dev # Muitas vezes necessária para unidades em pacotes R
