@@ -58,8 +58,8 @@ def carregar_dados_geoespaciais_locais():
     ATUALIZADO PARA USAR ARQUIVOS DE 2020.
     """
     # Caminhos para os arquivos GeoJSON DENTRO do seu repositório
-    path_municipios = "dados_geoespaciais/municipios_br_2020.geojson" # ATUALIZADO para 2020
-    path_estados = "dados_geoespaciais/estados_br_2020.geojson"     # ATUALIZADO para 2020
+    path_municipios = "mapa_ideb_2021/dados_geoespaciais/municipios_br_2020.geojson" # ATUALIZADO para 2020
+    path_estados = "mapa_ideb_2021/dados_geoespaciais/estados_br_2020.geojson"     # ATUALIZADO para 2020
 
     try:
         st.write("Carregando dados geoespaciais dos municípios (local, ano 2020)...") # Mensagem atualizada
@@ -166,7 +166,7 @@ st.title("Painel IDEB Brasil (Dados Geo Locais - Ano 2020)") # Título atualizad
 # Os dados do IDEB ainda são de 2021, mas os dados geoespaciais são de 2020.
 # Isso pode ou não ser um problema, dependendo da sua análise.
 # Se precisar de dados do IDEB de 2020, você precisaria de um arquivo diferente.
-df_ideb = carregar_dados_ideb("/home/rocha/Documentos/GitHub/mapa_ideb_max_python/mapa_ideb_2021/ideb_escola_2021.txt")
+df_ideb = carregar_dados_ideb("mapa_ideb_2021/ideb_escola_2021.txt")
 br_muni_gdf, br_estados_gdf = carregar_dados_geoespaciais_locais() # Carrega dados geoespaciais locais de 2020
 
 if df_ideb is not None and br_muni_gdf is not None and br_estados_gdf is not None:
