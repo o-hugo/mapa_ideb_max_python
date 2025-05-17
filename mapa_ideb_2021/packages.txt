@@ -1,12 +1,23 @@
 # Dependências do sistema operacional para R e pacotes R geoespaciais
 r-base-core     # Instala o núcleo do R
-r-cran-sf       # Tenta instalar o pacote R 'sf' via apt (pode não ser a versão mais recente ou pode faltar)
-r-cran-dplyr    # Tenta instalar o pacote R 'dplyr' via apt
-# r-cran-geobr  # É improvável que 'r-cran-geobr' esteja disponível diretamente via apt.
-                # A instalação do pacote R 'geobr' pode precisar ser tratada de outra forma se esta falhar.
+r-base-dev      # Essencial: instala os arquivos de desenvolvimento do R, necessários para compilar rpy2 e outros pacotes R
+r-recommended   # Instala pacotes R recomendados que podem ser úteis
 
-# Bibliotecas de sistema frequentemente necessárias para pacotes R geoespaciais como 'sf'
-libgdal-dev
-libgeos-dev
-libproj-dev
-libudunits2-dev # Muitas vezes necessária para unidades em pacotes R
+# Tentativa de instalar pacotes R geoespaciais via apt (gerenciador de pacotes do Debian/Ubuntu)
+# Estas versões podem não ser as mais recentes ou podem faltar.
+# Se estas falharem ou causarem problemas, a instalação de pacotes R pode precisar ser feita
+# de dentro do R (o que é mais complexo de automatizar no Streamlit Cloud).
+r-cran-sf       # Pacote R 'sf' para dados espaciais
+r-cran-dplyr    # Pacote R 'dplyr' para manipulação de dados
+# r-cran-geobr  # É improvável que 'r-cran-geobr' esteja disponível diretamente via apt.
+                # O pacote R 'geobr' provavelmente precisará ser instalado de dentro do R
+                # se o wrapper Python 'geobr' não o gerenciar automaticamente.
+
+# Bibliotecas de sistema frequentemente necessárias para pacotes R geoespaciais como 'sf' e para compilação
+libgdal-dev     # Para manipulação de dados geoespaciais raster e vetoriais
+libgeos-dev     # Para operações geométricas
+libproj-dev     # Para projeções cartográficas
+libudunits2-dev # Para manipulação de unidades, frequentemente uma dependência de pacotes R
+libcurl4-openssl-dev # Dependência de rede para R
+libssl-dev      # Dependência de SSL para R
+libxml2-dev     # Para manipulação de XML, usada por alguns pacotes R
